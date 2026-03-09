@@ -1,4 +1,4 @@
-# 📚 Panduan Membuat Modul CRUD (Untuk Anak Magang)
+# 📚 Panduan Membuat Modul CRUD
 
 Selamat datang di tim developer **Disposisi App**! Panduan ini dirancang khusus untuk membantumu memahami alur *End-to-End* (Mulai dari Database hingga Layar Tampilan) dalam membangun fitur CRUD (Create, Read, Update, Delete).
 
