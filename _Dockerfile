@@ -1,0 +1,28 @@
+# sibu-app/SIBU_BE/Dockerfile
+FROM node:20-alpine
+
+# Mengatur working directory di dalam container
+WORKDIR /app
+
+# --- TAMBAHKAN BARIS INI UNTUK MENGAKTIFKAN COREPACK ---
+RUN corepack enable
+
+# Menyalin package.json dan yarn.lock ke dalam container
+COPY package.json yarn.lock ./
+
+# Menginstal dependencies proyek
+RUN yarn install --frozen-lockfile
+
+# Menyalin semua file aplikasi lainnya ke dalam container
+COPY . .
+
+RUN yarn install
+# Membangun aplikasi NestJS
+RUN yarn build
+
+# Mengatur perintah default untuk menjalankan aplikasi
+CMD ["yarn", "start:prod"]
+
+# Mengekspos port
+EXPOSE 3007
+EXPOSE 3001
